@@ -1,6 +1,7 @@
 # API-3.0-Python
 
 SDK API-3.0 Python Cielo
+[![Build Status](https://travis-ci.org/CharlesTenorio/API-3.0-Python.svg?branch=master)](https://travis-ci.org/CharlesTenorio/API-3.0-Python)
 
 
 
