@@ -1,6 +1,7 @@
-#-*- coding: utf-8 -*-s
+# -*- coding: utf-8 -*-s
 
 import sys
+
 sys.path.insert(0, "./")
 
 from cieloApi3 import *
@@ -41,6 +42,6 @@ cielo_ecommerce = CieloEcommerce(merchant, environment)
 
 # Criar a venda e imprime o retorno
 response_create_sale = cielo_ecommerce.create_sale(sale)
-print '----------------------response_create_sale----------------------'
-print json.dumps(response_create_sale, indent=2)
-print '----------------------response_create_sale----------------------'
+print('----------------------response_create_sale----------------------')
+print(json.dumps(response_create_sale, indent=2))
+print('----------------------response_create_sale----------------------')

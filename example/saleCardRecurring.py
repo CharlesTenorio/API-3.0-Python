@@ -1,12 +1,10 @@
-#-*- coding: utf-8 -*-s
-
+# -*- coding: utf-8 -*-s
 import sys
-sys.path.insert(0, "./")
-
+import json
 from cieloApi3 import *
 
-import json
 
+sys.path.insert(0, "./")
 # Configure o ambiente
 environment = Environment(sandbox=True)
 
@@ -40,13 +38,9 @@ cielo_ecommerce = CieloEcommerce(merchant, environment)
 
 # Criar a venda e imprime o retorno
 response_create_sale = cielo_ecommerce.create_sale(sale)
-print '----------------------response_create_sale----------------------'
-print json.dumps(response_create_sale, indent=2)
-print '----------------------response_create_sale----------------------'
-
-
-
-
+print('----------------------response_create_sale----------------------')
+print(json.dumps(response_create_sale, indent=2))
+print('----------------------response_create_sale----------------------')
 
 # Com a venda criada na Cielo, já temos o ID do pagamento, TID e demais
 # dados retornados pela Cielo
@@ -55,28 +49,24 @@ payment_id = sale.payment.payment_id
 # Com o ID do pagamento, podemos fazer sua captura,
 # se ela não tiver sido capturada ainda
 response_capture_sale = cielo_ecommerce.capture_sale(payment_id, 15700, 0)
-print '----------------------response_capture_sale----------------------'
-print json.dumps(response_capture_sale, indent=2)
-print '----------------------response_capture_sale----------------------'
+print('----------------------response_capture_sale----------------------')
+print(json.dumps(response_capture_sale, indent=2))
+print('----------------------response_capture_sale----------------------')
 
 # E também podemos fazer seu cancelamento, se for o caso
 response_cancel_sale = cielo_ecommerce.cancel_sale(payment_id, 15700)
-print '---------------------response_cancel_sale---------------------'
-print json.dumps(response_cancel_sale, indent=2)
-print '---------------------response_cancel_sale---------------------'
-
-
-
-
+print('---------------------response_cancel_sale---------------------')
+print(json.dumps(response_cancel_sale, indent=2))
+print('---------------------response_cancel_sale---------------------')
 
 # Com a venda recorrente criada na Cielo, já temos o ID do pagamento recorrente
 recurrent_payment_id = sale.payment.recurrent_payment.recurrent_payment_id
 
 # Consulta informações da venda recorrente
 response_get_recurrent_payment = cielo_ecommerce.get_recurrent_payment(recurrent_payment_id)
-print '---------------------response_get_recurrent_payment---------------------'
-print json.dumps(response_get_recurrent_payment, indent=2)
-print '---------------------response_get_recurrent_payment---------------------'
+print('---------------------response_get_recurrent_payment---------------------')
+print(json.dumps(response_get_recurrent_payment, indent=2))
+print('---------------------response_get_recurrent_payment---------------------')
 
 # # Desativa uma venda recorrente (Algum erro na API da Cielo, parou de funcionar)
 # response_deactivate_recurrent_payment = cielo_ecommerce.deactivate_recurrent_payment(recurrent_payment_id)
