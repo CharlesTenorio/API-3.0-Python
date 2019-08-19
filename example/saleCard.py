@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-s
-
 import sys
+import json
+from cieloApi3 import *
+
+
 
 sys.path.insert(0, "./")
 
-from cieloApi3 import *
-
-import json
 
 # Configure o ambiente
 environment = Environment(sandbox=True)

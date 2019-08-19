@@ -1,4 +1,3 @@
-
 import json
 from future.utils import integer_types
 
@@ -38,6 +37,7 @@ def process_name_key(dictionary):
 
     return newDictionary
 
+
 def capitalize_key(key):
     parts = key.split('_')
 
@@ -46,6 +46,7 @@ def capitalize_key(key):
         newParts.append(part.capitalize())
 
     return ''.join(newParts)
+
 
 def remove_none(dado):
 
@@ -56,6 +57,7 @@ def remove_none(dado):
 
     return dado
 
+
 def remove_none_dict(obj):
     retorno = {}
     for chave in obj:
@@ -65,6 +67,7 @@ def remove_none_dict(obj):
             retorno[chave] = remove_none(valor)
 
     return retorno
+
 
 def remove_none_list(lista):
     resposta = []
