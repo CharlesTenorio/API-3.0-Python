@@ -1,5 +1,5 @@
 appdirs==1.4.3
-attrs==19.1.0
+attrs==24.1.0
 certifi==2019.6.16
 chardet==3.0.4
 future==0.17.1
